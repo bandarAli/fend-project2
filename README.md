@@ -30,6 +30,3 @@ open the index.html file on any browser .
 * check to see if the two cards matched .
 * Increment the move counter and display it on the page.
 * Display a congratilation modal when player matchs all cards.
-
-
-
