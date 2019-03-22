@@ -170,6 +170,7 @@ h1 {
   /****** Media queries
 ***************************/
 
+/* for smaller screen */
 
 @media (max-width: 320px) {
 	.deck {
@@ -183,8 +184,7 @@ h1 {
 }
 
 
-/* For Tablets and larger screens
-****************/
+/* For larger screens */
 
 @media (min-width: 437px) {
 	.container {

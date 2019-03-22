@@ -11,7 +11,7 @@ const arrayOfSym = ["fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-cube",
 document.addEventListener('DOMContentLoaded', function () {
     const cards = document.querySelectorAll('.card');
     let i = 0;
-    for (sym of arrayOfSym) {
+    for (sym of shuffle(arrayOfSym)) {
         cards[i].firstElementChild.classList.add(sym);
         i++;
     }
