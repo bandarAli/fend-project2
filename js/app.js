@@ -43,7 +43,7 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (Function hideNotMatchedCards)
  *    + if all cards have matched, display a message with the final score (Function winingDisplay())
  */
-const cards = document.querySelectorAll('.card'); 
+const cards = document.querySelectorAll('.card');
 const moves = document.querySelector(".moves");
 const stars = document.querySelector('.stars').querySelectorAll('.fa');
 const rest = document.querySelector('.restart');
@@ -62,16 +62,16 @@ let movesCounter = 0;
 let matchCounter = 0;               /* counters */
 let starsIndex = 3;
 let min = 0;
-let sec = 0;
+let sec = 1;
 let timerText;
 
 /* add listiner on document click with check for card target */
-document.addEventListener('click', function () {  
-    startTimer();
+document.addEventListener('click', function () {
     if (clickNum <= 2 && !(openStatus)) {
         clickedCard = event.target;
         if (clickedCard.classList == "card") {   /* check the click is on a card that not been locked yet */
             clickNum++;
+            if (!timerStarted) { startTimer(); }
             openCard();
             if (matchCounter === 8) { winingDisplay() }    /* Display the Win modal */
         }
@@ -134,6 +134,7 @@ function starRate() {
     }
 }
 
+/* Display when all cards match */
 function winingDisplay() {
     let modalBody = document.querySelector('.modal-body');
     let starOrStars = '';
@@ -148,28 +149,31 @@ function winingDisplay() {
     }, 500);
 }
 
+/* Start the Timer on the page */
 function startTimer() {
-    if (!timerStarted) {
-        let timerUpdate = setInterval(function () {
-            if (matchCounter === 8) {
-                clearInterval(timerUpdate);
-            } else if (sec > 59) {
-                sec = 0;
-                min++;
-            }
-            timerText = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
-            timerSpan.textContent = timerText;
-            sec++;
-        }, 1000);
-    }
+    timerSpan.textContent = '00:01';
+    let timerUpdate = setInterval(function () {
+        if (matchCounter === 8) {
+            clearInterval(timerUpdate);
+        } else if (sec > 59) {
+            sec = 0;
+            min++;
+        }
+        timerText = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+        timerSpan.textContent = timerText;
+        sec++;
+    }, 1000);
     timerStarted = true;
 }
 
-/* Button Clicl to reload the game */
+
+
+/* Button Click to reload the game */
 rest.addEventListener('click', function () {
     reloadPage();       /* restart Click event listener */
 });
 
+/* Reload the page and hide the modal if it's Block */
 function reloadPage() {
     modal.display = 'none';
     location.reload();
