@@ -11,7 +11,7 @@ const arrayOfSym = ["fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-cube",
 document.addEventListener('DOMContentLoaded', function () {
     const cards = document.querySelectorAll('.card');
     let i = 0;
-    for (sym of shuffle(arrayOfSym)) {
+    for (sym of arrayOfSym) {
         cards[i].firstElementChild.classList.add(sym);
         i++;
     }
@@ -145,7 +145,8 @@ function winingDisplay() {
                         </p>`;
     modalBody.insertAdjacentHTML('afterbegin', counterMsg);
     setTimeout(function () {
-        modal.style.display = "block";
+        document.querySelector('.container').setAttribute('aria-hidden','true');
+        modal.style.display = "block";     
     }, 500);
 }
 
@@ -175,6 +176,7 @@ rest.addEventListener('click', function () {
 
 /* Reload the page and hide the modal if it's Block */
 function reloadPage() {
+    document.querySelector('.container').removeAttribute('aria-hidden') ;
     modal.display = 'none';
     location.reload();
 }
