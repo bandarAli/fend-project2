@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let i = 0;
     for (sym of arrayOfSym) {
         cards[i].firstElementChild.classList.add(sym);
+        //cards[i].classList.add('unmatch');
         i++;
     }
 });
@@ -107,8 +108,8 @@ function checkMatch() {
 
 function lockMatchedCards() {
     matchCounter++;
-    clickedCard.classList = "card match";
-    prevCard.classList = "card match";
+    clickedCard.classList = "card match disabled";
+    prevCard.classList = "card match disabled";
     openStatus = false;
 }
 function hideNotMatchedCards() {
@@ -117,6 +118,7 @@ function hideNotMatchedCards() {
         prevCard.classList = "card";
         openStatus = false;
     }, 500);
+
 }
 
 
@@ -145,8 +147,8 @@ function winingDisplay() {
                         </p>`;
     modalBody.insertAdjacentHTML('afterbegin', counterMsg);
     setTimeout(function () {
-        document.querySelector('.container').setAttribute('aria-hidden','true');
-        modal.style.display = "block";     
+        document.querySelector('.container').setAttribute('aria-hidden', 'true');
+        modal.style.display = "block";
     }, 500);
 }
 
@@ -176,7 +178,7 @@ rest.addEventListener('click', function () {
 
 /* Reload the page and hide the modal if it's Block */
 function reloadPage() {
-    document.querySelector('.container').removeAttribute('aria-hidden') ;
+    document.querySelector('.container').removeAttribute('aria-hidden');
     modal.display = 'none';
     location.reload();
 }
