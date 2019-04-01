@@ -3,9 +3,5 @@
   "version": "1",
   "author": "bander habesh <bander.habish@gmail.com>",
   "main": "./fend-project2",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bandarAli/fend-project2.git"
-  },
-  "homepage": "https://github.com/bandarAli/fend-project2/blob/master/index.html"
+
 }
