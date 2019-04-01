@@ -2,7 +2,7 @@
   "name": "Memory-game",
   "version": "1",
   "author": "bander habesh <bander.habish@gmail.com>",
-  "main": "./lib/npm-check-updates",
+  "main": "./lib/fend-project2",
   "bin": {
     "npm-check-updates": "./bin/fend-project2",
     "ncu": "./bin/ncu"
