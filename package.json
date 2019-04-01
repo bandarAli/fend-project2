@@ -1,11 +1,7 @@
 {
   "name": "Memory-game",
-  "version": "3.1.3",
+  "version": "1",
   "author": "bander habesh <bander.habish@gmail.com>",
-  "license": "Apache-2.0",
-  "contributors": [
-    "Raine Revere (https://github.com/bandarAli)"
-  ],
   "description": "Find newer versions of dependencies than what your package.json or bower.json allows",
   "keywords": [
     "npm",
