@@ -2,7 +2,7 @@
   "name": "Memory-game",
   "version": "1",
   "author": "bander habesh <bander.habish@gmail.com>",
-  "main": "./lib/fend-project2",
+  "main": "./fend-project2",
   "repository": {
     "type": "git",
     "url": "https://github.com/bandarAli/fend-project2.git"
