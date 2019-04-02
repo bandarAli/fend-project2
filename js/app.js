@@ -1,6 +1,8 @@
 /*
  * Create a list that holds all of your cards
  */
+let ff = document.querySelectorAll('fa fa-star');
+ff[2].classList.remove('fa-star');
 
 const arrayOfSym = ["fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-cube",
     "fa-bolt", "fa-bicycle", "fa-leaf", "fa-bomb", "fa-diamond",
@@ -11,7 +13,7 @@ const arrayOfSym = ["fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-cube",
 document.addEventListener('DOMContentLoaded', function () {
     const cards = document.querySelectorAll('.card');
     let i = 0;
-    for (sym of arrayOfSym) {
+    for (sym of shuffle(arrayOfSym)) {
         cards[i].firstElementChild.classList.add(sym);
         //cards[i].classList.add('unmatch');
         i++;
@@ -70,6 +72,7 @@ let timerText;
 document.addEventListener('click', function () {
     if (clickNum <= 2 && !(openStatus)) {
         clickedCard = event.target;
+        console.log(clickedCard);
         if (clickedCard.classList == "card") {   /* check the click is on a card that not been locked yet */
             clickNum++;
             if (!timerStarted) { startTimer(); }
@@ -155,13 +158,15 @@ function winingDisplay() {
 /* Start the Timer on the page */
 function startTimer() {
     timerSpan.textContent = '00:01';
-    let timerUpdate = setInterval(function () {
+    let timerUpdate = 
+    setInterval(function () {
         if (matchCounter === 8) {
             clearInterval(timerUpdate);
         } else if (sec > 59) {
             sec = 0;
             min++;
         }
+
         timerText = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
         timerSpan.textContent = timerText;
         sec++;

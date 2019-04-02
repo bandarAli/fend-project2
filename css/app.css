@@ -22,6 +22,7 @@ body {
 }
 
 .container {
+    font-size: 22px ;
     display: flex;
     flex-wrap: wrap ;
     justify-content: center;
@@ -45,7 +46,9 @@ h1 {
  */
 
 .deck {
-    width : 90% ;
+    width: 660px;
+    height: 660px;
+    /* width : 90% ; */
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     padding: 32px ;
     border-radius: 10px;
@@ -58,8 +61,10 @@ h1 {
 }
 
 .deck .card {
-    height: 3.7rem;
-    width: 3.7rem;
+    height: 125px;
+    width: 125px;
+    /* height: 3.7rem;
+    width: 3.7rem; */
     margin: 0.2rem 0.2rem;
     background: #2e3d49;
     font-size: 0;
@@ -75,12 +80,23 @@ h1 {
 
 .deck .card.open {
     transform: rotateY(0);
-    background: #02b3e4;
+    background: #e03b08c0;
     cursor: default;
     animation-name: flipInY;
 	-webkit-backface-visibility: visible !important;
 	backface-visibility: visible !important;
 	animation-duration: .75s;
+}
+
+
+.deck .card:hover {
+    background :rgb(197, 185, 185);  
+    border : 10px groove blue ;      
+    transition: border color 0.5s linear; /* vendorless fallback */
+    -o-transition: border color 0.5s linear; /* opera */
+    -ms-transition: border color 0.5s linear; /* IE 10 */
+    -moz-transition: border color 0.5s linear; /* Firefox */
+    -webkit-transition: border color 0.5s linear; /*safari and chrome */
 }
 
 .deck .card.show {
@@ -241,7 +257,8 @@ h1 {
 
 @media (max-width: 320px) {
 	.deck {
-		width: 90%;
+        width: 70%;
+        height: auto;
 	}
 
 	.deck .card {
@@ -253,22 +270,16 @@ h1 {
 
 /* For larger screens */
 
-@media (min-width: 437px) {
-	.container {
-		font-size: 22px;
-	}
+@media (max-width: 360px) {
 
 	.deck {
-		width: 660px;
-		height: 680px;
+        width : 90% ;
+        height: auto ;
 	}
 
 	.deck .card {
-		height: 125px;
-		width: 125px;
+        height: 3.7rem ;
+        width: 3.7rem ;
 	}
 
-	.modal {
-		width: 100%;
-	}
 }
