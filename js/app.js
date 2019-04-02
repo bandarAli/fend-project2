@@ -1,8 +1,6 @@
 /*
  * Create a list that holds all of your cards
  */
-let ff = document.querySelectorAll('fa fa-star');
-ff[2].classList.remove('fa-star');
 
 const arrayOfSym = ["fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-cube",
     "fa-bolt", "fa-bicycle", "fa-leaf", "fa-bomb", "fa-diamond",
@@ -72,7 +70,7 @@ let timerText;
 document.addEventListener('click', function () {
     if (clickNum <= 2 && !(openStatus)) {
         clickedCard = event.target;
-        console.log(clickedCard);
+        // console.log(clickedCard);
         if (clickedCard.classList == "card") {   /* check the click is on a card that not been locked yet */
             clickNum++;
             if (!timerStarted) { startTimer(); }
@@ -120,7 +118,7 @@ function hideNotMatchedCards() {
         clickedCard.classList = "card";
         prevCard.classList = "card";
         openStatus = false;
-    }, 500);
+    }, 700);
 
 }
 

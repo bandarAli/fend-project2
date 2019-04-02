@@ -89,15 +89,14 @@ h1 {
 }
 
 
-.deck .card:hover {
-    background :rgb(197, 185, 185);  
-    border : 10px groove blue ;      
-    transition: border color 0.5s linear; /* vendorless fallback */
-    -o-transition: border color 0.5s linear; /* opera */
-    -ms-transition: border color 0.5s linear; /* IE 10 */
-    -moz-transition: border color 0.5s linear; /* Firefox */
-    -webkit-transition: border color 0.5s linear; /*safari and chrome */
-}
+ /* .deck .card:hover {
+    background :rgb(197, 185, 185);      
+    transition:  0.5s linear; 
+    -o-transition:  0.5s linear; 
+    -ms-transition:  0.5s linear; 
+    -moz-transition: 0.5s linear; 
+    -webkit-transition:  0.5s linear; 
+}  */
 
 .deck .card.show {
     font-size: 33px;
