@@ -5,7 +5,7 @@
 const arrayOfSym = ["fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-cube",
     "fa-bolt", "fa-bicycle", "fa-leaf", "fa-bomb", "fa-diamond",
     "fa-paper-plane-o", "fa-anchor", "fa-cube", "fa-bolt",
-    "fa-bicycle", "fa-leaf", "fa-bomb"];
+    "fa-bicycle", "fa-leaf", "fa-bomb" ];
 
 /* add the Shuffled Cards array to the page After Loading the page */
 document.addEventListener('DOMContentLoaded', function () {
